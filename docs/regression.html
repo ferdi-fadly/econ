@@ -192,14 +192,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
-<li>
-<a href="#spesifikasi-model-umum" id="toc-spesifikasi-model-umum" class="nav-link active" data-scroll-target="#spesifikasi-model-umum"><span class="header-section-number">2.1</span> Spesifikasi Model Umum</a>
+<li><a href="#tahapan-regresi" id="toc-tahapan-regresi" class="nav-link active" data-scroll-target="#tahapan-regresi">Tahapan Regresi</a></li>
+  <li>
+<a href="#spesifikasi-model-umum" id="toc-spesifikasi-model-umum" class="nav-link" data-scroll-target="#spesifikasi-model-umum"><span class="header-section-number">2.1</span> Spesifikasi Model Umum</a>
   <ul class="collapse">
 <li><a href="#spesifikasi-model-regresi-ols" id="toc-spesifikasi-model-regresi-ols" class="nav-link" data-scroll-target="#spesifikasi-model-regresi-ols"><span class="header-section-number">2.1.1</span> Spesifikasi Model Regresi OLS</a></li>
   <li><a href="#spesifikasi-model-contoh-hubungan-pendapatan-terhadap-pengeluaran-makanan" id="toc-spesifikasi-model-contoh-hubungan-pendapatan-terhadap-pengeluaran-makanan" class="nav-link" data-scroll-target="#spesifikasi-model-contoh-hubungan-pendapatan-terhadap-pengeluaran-makanan"><span class="header-section-number">2.1.2</span> Spesifikasi Model Contoh: Hubungan Pendapatan terhadap Pengeluaran Makanan</a></li>
   </ul>
 </li>
-  <li><a href="#estimasi-parameter-dengan-regresi" id="toc-estimasi-parameter-dengan-regresi" class="nav-link" data-scroll-target="#estimasi-parameter-dengan-regresi"><span class="header-section-number">2.2</span> Estimasi Parameter dengan Regresi</a></li>
+  <li>
+<a href="#estimasi-parameter-dengan-regresi" id="toc-estimasi-parameter-dengan-regresi" class="nav-link" data-scroll-target="#estimasi-parameter-dengan-regresi"><span class="header-section-number">2.2</span> Estimasi Parameter dengan Regresi</a>
+  <ul class="collapse">
+<li><a href="#estimasi-selang-kepercayaan" id="toc-estimasi-selang-kepercayaan" class="nav-link" data-scroll-target="#estimasi-selang-kepercayaan"><span class="header-section-number">2.2.1</span> Estimasi Selang Kepercayaan</a></li>
+  </ul>
+</li>
   <li>
 <a href="#pengujian-hipotesis-asumsi-dan-kelayakan-model" id="toc-pengujian-hipotesis-asumsi-dan-kelayakan-model" class="nav-link" data-scroll-target="#pengujian-hipotesis-asumsi-dan-kelayakan-model"><span class="header-section-number">2.3</span> Pengujian Hipotesis, Asumsi, dan Kelayakan Model</a>
   <ul class="collapse">
@@ -217,9 +223,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#interpretasi" id="toc-interpretasi" class="nav-link" data-scroll-target="#interpretasi"><span class="header-section-number">2.4.2</span> Interpretasi</a></li>
   </ul>
 </li>
-  <li><a href="#extras-model-log-log" id="toc-extras-model-log-log" class="nav-link" data-scroll-target="#extras-model-log-log"><span class="header-section-number">2.5</span> Extras: Model Log-log</a></li>
-  <li><a href="#extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar" id="toc-extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar" class="nav-link" data-scroll-target="#extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar"><span class="header-section-number">2.6</span> Extras 2: Model dengan Asumsi Homoskedastisitas yang terlanggar</a></li>
-  <li><a href="#challenge-2" id="toc-challenge-2" class="nav-link" data-scroll-target="#challenge-2"><span class="header-section-number">2.7</span> Challenge 2</a></li>
+  <li><a href="#extras-model-log-log" id="toc-extras-model-log-log" class="nav-link" data-scroll-target="#extras-model-log-log">Extras: Model Log-log</a></li>
+  <li><a href="#extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar" id="toc-extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar" class="nav-link" data-scroll-target="#extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar">Extras 2: Model dengan Asumsi Homoskedastisitas yang terlanggar</a></li>
+  <li><a href="#challenge-2" id="toc-challenge-2" class="nav-link" data-scroll-target="#challenge-2">Challenge 2</a></li>
   </ul></nav>
     </div>
 <!-- main -->
@@ -239,77 +245,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-</header><div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Packages Library yang digunakan</span></span>
+</header><section id="tahapan-regresi" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="tahapan-regresi">Tahapan Regresi</h2>
+<ul>
+<li>Spesifikasi Model (termasuk: Identifikasi Masalah)</li>
+<li>Pengumpulan Data
+<ul>
+<li>Cross Section (Individu: n, periode: 1)</li>
+<li>Time Series (Individu: 1, periode: t)</li>
+<li>Pooled (Individu: n, periode: t)</li>
+</ul>
+</li>
+<li>Estimasi Parameter</li>
+<li>Pengujian Hipotesis, Asumsi, dan Kelayakan Model</li>
+<li>Analisis/Interpretasi/Peramalan</li>
+</ul>
+<div class="cell">
+<details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Packages Library yang digunakan</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/bookdown">bookdown</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PoEdata</span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://xtable.r-forge.r-project.org/">xtable</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/printr/">printr</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 method overwritten by 'printr':
-  method                from     
-  knit_print.data.frame rmarkdown</code></pre>
-</div>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">stargazer</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Please cite as: </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code> Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code> R package version 5.2.3. https://CRAN.R-project.org/package=stargazer </code></pre>
-</div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/rmarkdown">rmarkdown</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lmtest</span><span class="op">)</span> <span class="co">#for coeftest() and bptest().</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: zoo</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'zoo'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    as.Date, as.Date.numeric</code></pre>
-</div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span> <span class="co">#for glance() and tidy()</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/printr/">printr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">stargazer</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/rmarkdown">rmarkdown</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lmtest</span><span class="op">)</span> <span class="co">#for coeftest() and bptest().</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span> <span class="co">#for glance() and tidy()</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PoEdata</span><span class="op">)</span> <span class="co">#for PoE4 datasets</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span> <span class="co">#for hccm() robust standard errors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: carData</code></pre>
-</div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sandwich.R-Forge.R-project.org/">sandwich</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span> <span class="co">#for hccm() robust standard errors</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sandwich.R-Forge.R-project.org/">sandwich</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<section id="spesifikasi-model-umum" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="spesifikasi-model-umum">
+</section><section id="spesifikasi-model-umum" class="level2" data-number="2.1"><h2 data-number="2.1" class="anchored" data-anchor-id="spesifikasi-model-umum">
 <span class="header-section-number">2.1</span> Spesifikasi Model Umum</h2>
 <p>Model Regresi Linier mengasumsikan bahwa terdapat hubungan linier antara variabel terikat dan variabel bebas.</p>
 <p><span class="math display">\[y_i =\beta_0 +\beta_1 x_{1i}+\beta_2 x_{2i}+...+\beta_k x_{ki}+\varepsilon_i\]</span></p>
 <p>Dimana:</p>
 <ul>
-<li><span class="math inline">\(y_i= \text{variabel tidak bebas individu -i}\)</span></li>
-<li><span class="math inline">\(x_{ki}= \text{variabel bebas ke-k individu -i}\)</span></li>
-<li><span class="math inline">\(\varepsilon_{i}= \text{residual individu -i}\)</span></li>
+<li>
+<span class="math inline">\(y_i=\)</span> variabel tidak bebas individu -i</li>
+<li>
+<span class="math inline">\(x_{ki}=\)</span> variabel bebas ke-k individu -i</li>
+<li>
+<span class="math inline">\(\varepsilon_{i}=\)</span> residual individu -i</li>
 </ul>
 <section id="spesifikasi-model-regresi-ols" class="level3" data-number="2.1.1"><h3 data-number="2.1.1" class="anchored" data-anchor-id="spesifikasi-model-regresi-ols">
 <span class="header-section-number">2.1.1</span> Spesifikasi Model Regresi OLS</h3>
 <ul>
-<li><span class="math inline">\(Linear: y=\beta_0+\beta X\)</span></li>
-<li><span class="math inline">\(Semi-Log/Log-Lin: log(y)=\beta_0+\beta X\)</span></li>
-<li><span class="math inline">\(Semi-Log/Lin-Log: log(y)=\beta_0+\beta log(X)\)</span></li>
-<li><span class="math inline">\(Double-Log/Log-Log: log(y)=\beta_0+\beta log(X)\)</span></li>
+<li>Linear: <span class="math inline">\(y=\beta_0+\beta_1 X\)</span>
+</li>
+<li>Semi-Log/Log-Lin: <span class="math inline">\(log(y)=\beta_0+\beta_1 X\)</span>
+</li>
+<li>Semi-Log/Lin-Log: <span class="math inline">\(log(y)=\beta_0+\beta_1 log(X)\)</span>
+</li>
+<li>Double-Log/Log-Log: <span class="math inline">\(log(y)=\beta_0+\beta_1 log(X)\)</span>
+</li>
 <li>etc</li>
 </ul></section><section id="spesifikasi-model-contoh-hubungan-pendapatan-terhadap-pengeluaran-makanan" class="level3" data-number="2.1.2"><h3 data-number="2.1.2" class="anchored" data-anchor-id="spesifikasi-model-contoh-hubungan-pendapatan-terhadap-pengeluaran-makanan">
 <span class="header-section-number">2.1.2</span> Spesifikasi Model Contoh: Hubungan Pendapatan terhadap Pengeluaran Makanan</h3>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PoEdata</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PoEdata</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">food</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">food</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: right;">food_exp</th>
@@ -346,7 +344,7 @@ Attaching package: 'zoo'</code></pre>
 </div>
 <p>Data berjumlah 40 observasi. Variabel yang diamati ada 2. Data selengkapnya dapat diakses pada link yang disediakan.</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"food"</span>, package<span class="op">=</span><span class="st">"PoEdata"</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"food"</span>, package<span class="op">=</span><span class="st">"PoEdata"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">food</span><span class="op">$</span><span class="va">income</span>, <span class="va">food</span><span class="op">$</span><span class="va">food_exp</span>, </span>
 <span>     ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">food</span><span class="op">$</span><span class="va">food_exp</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>     xlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">food</span><span class="op">$</span><span class="va">income</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -354,7 +352,7 @@ Attaching package: 'zoo'</code></pre>
 <span>     ylab<span class="op">=</span><span class="st">"weekly food expenditure in $"</span>, </span>
 <span>     type <span class="op">=</span> <span class="st">"p"</span>,</span>
 <span>     main<span class="op">=</span><span class="st">"Scatter plot untuk pendapatan terhadap pengeluaran makanan"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="regression_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
@@ -362,12 +360,12 @@ Attaching package: 'zoo'</code></pre>
 </section></section><section id="estimasi-parameter-dengan-regresi" class="level2" data-number="2.2"><h2 data-number="2.2" class="anchored" data-anchor-id="estimasi-parameter-dengan-regresi">
 <span class="header-section-number">2.2</span> Estimasi Parameter dengan Regresi</h2>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mod1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">food_exp</span> <span class="op">~</span> <span class="va">income</span>, data <span class="op">=</span> <span class="va">food</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mod1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">food_exp</span> <span class="op">~</span> <span class="va">income</span>, data <span class="op">=</span> <span class="va">food</span><span class="op">)</span></span>
 <span><span class="va">b0</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="va">b1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span></span>
 <span><span class="va">smod1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span>
 <span><span class="va">smod1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = food_exp ~ income, data = food)
@@ -389,23 +387,23 @@ F-statistic: 23.79 on 1 and 38 DF,  p-value: 1.946e-05</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">food</span><span class="op">$</span><span class="va">income</span>, <span class="va">food</span><span class="op">$</span><span class="va">food_exp</span>, </span>
+<details><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">food</span><span class="op">$</span><span class="va">income</span>, <span class="va">food</span><span class="op">$</span><span class="va">food_exp</span>, </span>
 <span>     xlab<span class="op">=</span><span class="st">"weekly income in $100"</span>, </span>
 <span>     ylab<span class="op">=</span><span class="st">"weekly food expenditure in $"</span>, </span>
 <span>     ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">food</span><span class="op">$</span><span class="va">food_exp</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>     xlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">food</span><span class="op">$</span><span class="va">income</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>     type <span class="op">=</span> <span class="st">"p"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/abline.html">abline</a></span><span class="op">(</span><span class="va">b0</span>,<span class="va">b1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="regression_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="estimasi-selang-kepercayaan" class="level5" data-number="2.2.0.0.1"><h5 data-number="2.2.0.0.1" class="anchored" data-anchor-id="estimasi-selang-kepercayaan">
-<span class="header-section-number">2.2.0.0.1</span> Estimasi Selang Kepercayaan</h5>
+<section id="estimasi-selang-kepercayaan" class="level3" data-number="2.2.1"><h3 data-number="2.2.1" class="anchored" data-anchor-id="estimasi-selang-kepercayaan">
+<span class="header-section-number">2.2.1</span> Estimasi Selang Kepercayaan</h3>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ci</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/confint.html">confint</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ci</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/confint.html">confint</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">ci</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>                2.5 %    97.5 %
 (Intercept) -4.463279 171.29528
 income       5.972052  14.44723</code></pre>
@@ -443,16 +441,16 @@ income       5.972052  14.44723</code></pre>
 </section><section id="normalitas" class="level4" data-number="2.3.3.3"><h4 data-number="2.3.3.3" class="anchored" data-anchor-id="normalitas">
 <span class="header-section-number">2.3.3.3</span> Normalitas</h4>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">$</span><span class="va">residuals</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">$</span><span class="va">residuals</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="regression_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="homoskedastisitas" class="level4" data-number="2.3.3.4"><h4 data-number="2.3.3.4" class="anchored" data-anchor-id="homoskedastisitas">
 <span class="header-section-number">2.3.3.4</span> Homoskedastisitas</h4>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="regression_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
@@ -476,9 +474,9 @@ income       5.972052  14.44723</code></pre>
 <span class="header-section-number">2.3.4.1</span> Koefisien Determinasi (<span class="math inline">\(R^2\)</span>)</h4>
 <p><span class="math display">\[SST=SSR+SSE\]</span></p>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">anova1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">anova1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span><span class="op">(</span><span class="va">mod1</span><span class="op">)</span></span>
 <span><span class="va">anova1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <thead><tr class="header">
 <th style="text-align: left;"></th>
@@ -508,7 +506,8 @@ income       5.972052  14.44723</code></pre>
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">r2</span><span class="op">=</span><span class="va">anova1</span><span class="op">$</span><span class="st">"Sum Sq"</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">anova1</span><span class="op">$</span><span class="st">"Sum Sq"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">r2</span><span class="op">=</span><span class="va">anova1</span><span class="op">$</span><span class="st">"Sum Sq"</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">anova1</span><span class="op">$</span><span class="st">"Sum Sq"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p><span class="math inline">\(SST\)</span> = 4.951322^{5}</p>
 <p><span class="math inline">\(R^2\)</span> = 0.385</p>
@@ -516,22 +515,22 @@ income       5.972052  14.44723</code></pre>
 </section></section><section id="contoh-pengecekan-asumsi-yang-sesuaiideal" class="level3" data-number="2.3.5"><h3 data-number="2.3.5" class="anchored" data-anchor-id="contoh-pengecekan-asumsi-yang-sesuaiideal">
 <span class="header-section-number">2.3.5</span> Contoh Pengecekan Asumsi yang sesuai/Ideal</h3>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12345</span><span class="op">)</span>   <span class="co">#sets the seed for the random number generator</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Random.html">set.seed</a></span><span class="op">(</span><span class="fl">12345</span><span class="op">)</span>   <span class="co">#sets the seed for the random number generator</span></span>
 <span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">300</span>, <span class="fl">0</span>, <span class="fl">10</span><span class="op">)</span></span>
 <span><span class="va">e</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">300</span>, <span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">+</span><span class="va">x</span><span class="op">+</span><span class="va">e</span></span>
 <span><span class="va">mod3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">y</span><span class="op">~</span><span class="va">x</span><span class="op">)</span></span>
 <span><span class="va">ehat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">mod3</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">ehat</span>, xlab<span class="op">=</span><span class="st">"x"</span>, ylab<span class="op">=</span><span class="st">"residuals"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="regression_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">ehat</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html">hist</a></span><span class="op">(</span><span class="va">ehat</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="regression_files/figure-html/unnamed-chunk-10-2.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">mod3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">mod3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="regression_files/figure-html/unnamed-chunk-10-3.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output-display">
@@ -549,11 +548,11 @@ income       5.972052  14.44723</code></pre>
 <section id="peramalan" class="level3" data-number="2.4.1"><h3 data-number="2.4.1" class="anchored" data-anchor-id="peramalan">
 <span class="header-section-number">2.4.1</span> Peramalan</h3>
 <div class="cell">
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">newx</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">25</span>, <span class="fl">27</span><span class="op">)</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">newx</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>income <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">20</span>, <span class="fl">25</span>, <span class="fl">27</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">yhat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/predict.html">predict</a></span><span class="op">(</span><span class="va">mod1</span>, <span class="va">newx</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">yhat</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"income=$2000"</span>, <span class="st">"$2500"</span>, <span class="st">"$2700"</span><span class="op">)</span> </span>
 <span><span class="va">yhat</span>  <span class="co"># prints the result</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>income=$2000        $2500        $2700 
     287.6089     338.6571     359.0764 </code></pre>
 </div>
@@ -561,8 +560,8 @@ income       5.972052  14.44723</code></pre>
 </section><section id="interpretasi" class="level3" data-number="2.4.2"><h3 data-number="2.4.2" class="anchored" data-anchor-id="interpretasi">
 <span class="header-section-number">2.4.2</span> Interpretasi</h3>
 <div class="cell">
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mod1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mod1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = food_exp ~ income, data = food)
@@ -596,10 +595,9 @@ Coefficients:
 <span class="header-section-number">2.4.2.1.3</span> Model Log-Linear</h5>
 </section><section id="model-log-log" class="level5" data-number="2.4.2.1.4"><h5 data-number="2.4.2.1.4" class="anchored" data-anchor-id="model-log-log">
 <span class="header-section-number">2.4.2.1.4</span> Model Log-Log</h5>
-</section></section></section></section><section id="extras-model-log-log" class="level2" data-number="2.5"><h2 data-number="2.5" class="anchored" data-anchor-id="extras-model-log-log">
-<span class="header-section-number">2.5</span> Extras: Model Log-log</h2>
+</section></section></section></section><section id="extras-model-log-log" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="extras-model-log-log">Extras: Model Log-log</h2>
 <div class="cell">
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculating log-log demand for chicken</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Calculating log-log demand for chicken</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"newbroiler"</span>, package<span class="op">=</span><span class="st">"PoEdata"</span><span class="op">)</span></span>
 <span><span class="va">mod6</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">q</span><span class="op">)</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span>, data<span class="op">=</span><span class="va">newbroiler</span><span class="op">)</span></span>
 <span><span class="va">b1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/coef.html">coef</a></span><span class="op">(</span><span class="va">mod6</span><span class="op">)</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span></span>
@@ -607,7 +605,7 @@ Coefficients:
 <span><span class="va">smod6</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">mod6</span><span class="op">)</span></span>
 <span><span class="va">tbl</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/xtable/man/xtable.html">xtable</a></span><span class="op">(</span><span class="va">smod6</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">tbl</span>, caption<span class="op">=</span><span class="st">"Model Hubungan Harga terhadap Permintaan Ayam"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Model Hubungan Harga terhadap Permintaan Ayam</caption>
 <thead><tr class="header">
@@ -637,7 +635,7 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Drawing the fitted values of the log-log equation</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Drawing the fitted values of the log-log equation</span></span>
 <span><span class="va">ngrid</span> <span class="op">&lt;-</span> <span class="fl">20</span> <span class="co"># number of drawing points </span></span>
 <span><span class="va">xmin</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">newbroiler</span><span class="op">$</span><span class="va">p</span><span class="op">)</span></span>
 <span><span class="va">xmax</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">newbroiler</span><span class="op">$</span><span class="va">p</span><span class="op">)</span></span>
@@ -647,18 +645,17 @@ Coefficients:
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">newbroiler</span><span class="op">$</span><span class="va">p</span>, <span class="va">newbroiler</span><span class="op">$</span><span class="va">q</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">60</span><span class="op">)</span>,</span>
 <span>     xlab<span class="op">=</span><span class="st">"price"</span>, ylab<span class="op">=</span><span class="st">"quantity"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">predicty</span><span class="op">~</span><span class="va">xp</span>, lty<span class="op">=</span><span class="fl">1</span>, col<span class="op">=</span><span class="st">"black"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="regression_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</section><section id="extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar" class="level2" data-number="2.6"><h2 data-number="2.6" class="anchored" data-anchor-id="extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar">
-<span class="header-section-number">2.6</span> Extras 2: Model dengan Asumsi Homoskedastisitas yang terlanggar</h2>
+</section><section id="extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="extras-2-model-dengan-asumsi-homoskedastisitas-yang-terlanggar">Extras 2: Model dengan Asumsi Homoskedastisitas yang terlanggar</h2>
 <p>Karena adanya heteroskedastisitas membuat kesalahan standar kuadrat terkecil menjadi keliru, maka diperlukan metode lain untuk menghitung Regresi.</p>
 <div class="cell">
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span></span>
 <span><span class="va">foodeq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">food_exp</span><span class="op">~</span><span class="va">income</span>,data<span class="op">=</span><span class="va">food</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">foodeq</span><span class="op">)</span>,caption<span class="op">=</span><span class="st">"Regular standard errors in the 'food' equation"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Regular standard errors in the ‘food’ equation</caption>
 <thead><tr class="header">
@@ -686,10 +683,10 @@ Coefficients:
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cov1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/car/man/hccm.html">hccm</a></span><span class="op">(</span><span class="va">foodeq</span>, type<span class="op">=</span><span class="st">"hc1"</span><span class="op">)</span> <span class="co">#needs package 'car'</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cov1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/car/man/hccm.html">hccm</a></span><span class="op">(</span><span class="va">foodeq</span>, type<span class="op">=</span><span class="st">"hc1"</span><span class="op">)</span> <span class="co">#needs package 'car'</span></span>
 <span><span class="va">food.HC1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lmtest/man/coeftest.html">coeftest</a></span><span class="op">(</span><span class="va">foodeq</span>, vcov.<span class="op">=</span><span class="va">cov1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">food.HC1</span><span class="op">)</span>,caption<span class="op">=</span><span class="st">"Robust (HC1) standard errors in the 'food' equation"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Robust (HC1) standard errors in the ‘food’ equation</caption>
 <thead><tr class="header">
@@ -719,12 +716,12 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">w</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="va">food</span><span class="op">$</span><span class="va">income</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">w</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">/</span><span class="va">food</span><span class="op">$</span><span class="va">income</span></span>
 <span><span class="va">food.wls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">food_exp</span><span class="op">~</span><span class="va">income</span>, weights<span class="op">=</span><span class="va">w</span>, data<span class="op">=</span><span class="va">food</span><span class="op">)</span></span>
 <span><span class="va">vcvfoodeq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/lmtest/man/coeftest.html">coeftest</a></span><span class="op">(</span><span class="va">foodeq</span>, vcov.<span class="op">=</span><span class="va">cov1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">foodeq</span><span class="op">)</span>, </span>
 <span>  caption<span class="op">=</span><span class="st">"OLS estimates for the 'food' equation"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>OLS estimates for the ‘food’ equation</caption>
 <thead><tr class="header">
@@ -754,9 +751,9 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">food.wls</span><span class="op">)</span>,</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">food.wls</span><span class="op">)</span>,</span>
 <span>  caption<span class="op">=</span><span class="st">"WLS estimates for the 'food' equation"</span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>WLS estimates for the ‘food’ equation</caption>
 <thead><tr class="header">
@@ -786,9 +783,9 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">vcvfoodeq</span><span class="op">)</span>,caption<span class="op">=</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html">tidy</a></span><span class="op">(</span><span class="va">vcvfoodeq</span><span class="op">)</span>,caption<span class="op">=</span></span>
 <span><span class="st">"OLS estimates for the 'food' equation with robust standard errors"</span> <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>OLS estimates for the ‘food’ equation with robust standard errors</caption>
 <thead><tr class="header">
@@ -818,15 +815,16 @@ Coefficients:
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"food"</span>, package<span class="op">=</span><span class="st">"PoEdata"</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"food"</span>, package<span class="op">=</span><span class="st">"PoEdata"</span><span class="op">)</span></span>
 <span><span class="va">food.ols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">food_exp</span><span class="op">~</span><span class="va">income</span>, data<span class="op">=</span><span class="va">food</span><span class="op">)</span></span>
 <span><span class="va">ehatsq</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">food.ols</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span></span>
 <span><span class="va">sighatsq.ols</span>  <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">ehatsq</span><span class="op">)</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/Log.html">log</a></span><span class="op">(</span><span class="va">income</span><span class="op">)</span>, data<span class="op">=</span><span class="va">food</span><span class="op">)</span></span>
 <span><span class="va">vari</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/fitted.values.html">fitted</a></span><span class="op">(</span><span class="va">sighatsq.ols</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">food.fgls</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="va">food_exp</span><span class="op">~</span><span class="va">income</span>, weights<span class="op">=</span><span class="fl">1</span><span class="op">/</span><span class="va">vari</span>, data<span class="op">=</span><span class="va">food</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/stargazer/man/stargazer.html">stargazer</a></span><span class="op">(</span><span class="va">food.ols</span>, <span class="va">food.HC1</span>, <span class="va">food.wls</span>, <span class="va">food.fgls</span>, type<span class="op">=</span><span class="st">"text"</span>,</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/stargazer/man/stargazer.html">stargazer</a></span><span class="op">(</span><span class="va">food.ols</span>, <span class="va">food.HC1</span>, <span class="va">food.wls</span>, <span class="va">food.fgls</span>, type<span class="op">=</span><span class="st">"text"</span>,</span>
 <span>          column.labels<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"OLS"</span>,<span class="st">"HC1"</span>,<span class="st">"WLS"</span>,<span class="st">"FGLS"</span><span class="op">)</span>,</span>
 <span><span class="co">#          single.row = TRUE, </span></span>
 <span><span class="co">#          report = "vc*", </span></span>
@@ -838,7 +836,7 @@ Coefficients:
 <span><span class="co">#          df=FALSE, </span></span>
 <span><span class="co">#          digits=2</span></span>
 <span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 =======================================================================
                                Dependent variable: 'food expenditure'  
@@ -862,7 +860,7 @@ Note:                                       *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/stargazer/man/stargazer.html">stargazer</a></span><span class="op">(</span><span class="va">food.ols</span>, <span class="va">food.HC1</span>, <span class="va">food.wls</span>, <span class="va">food.fgls</span>,</span>
+<details><summary>Code</summary><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/stargazer/man/stargazer.html">stargazer</a></span><span class="op">(</span><span class="va">food.ols</span>, <span class="va">food.HC1</span>, <span class="va">food.wls</span>, <span class="va">food.fgls</span>,</span>
 <span>  header<span class="op">=</span><span class="cn">FALSE</span>, </span>
 <span>  title<span class="op">=</span><span class="st">"Comparing various 'food' models"</span>,</span>
 <span>  type<span class="op">=</span><span class="va">.stargazertype</span>, <span class="co"># "html" or "latex" (in index.Rmd) </span></span>
@@ -878,9 +876,9 @@ Note:                                       *p&lt;0.1; **p&lt;0.05; ***p&lt;0.01
 <span>  dep.var.caption<span class="op">=</span><span class="st">"Dependent variable: 'food expenditure'"</span>,</span>
 <span>  model.names<span class="op">=</span><span class="cn">FALSE</span>,</span>
 <span>  star.char<span class="op">=</span><span class="cn">NULL</span><span class="op">)</span> <span class="co">#supresses the stars</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-</section><section id="challenge-2" class="level2" data-number="2.7"><h2 data-number="2.7" class="anchored" data-anchor-id="challenge-2">
-<span class="header-section-number">2.7</span> Challenge 2</h2>
+</section><section id="challenge-2" class="level2 unnumbered"><h2 class="unnumbered anchored" data-anchor-id="challenge-2">Challenge 2</h2>
 <ul>
 <li>Lakukan Estimasi Regresi Linear OLS untuk data Pengeluaran Makanan dan Income</li>
 <li>Coba untuk melakukan Estimasi Regresi dari Isu/Permasalahan yang ditemukan dari Challenge 1</li>

@@ -233,61 +233,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header><section id="stationeritas" class="level2" data-number="3.1"><h2 data-number="3.1" class="anchored" data-anchor-id="stationeritas">
 <span class="header-section-number">3.1</span> Stationeritas</h2>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">dynlm</span><span class="op">)</span> <span class="co">#for the `dynlm()` function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: zoo</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'zoo'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    as.Date, as.Date.numeric</code></pre>
-</div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">orcutt</span><span class="op">)</span> <span class="co"># for the `cochrane.orcutt()` function</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: lmtest</code></pre>
-</div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">nlWaldTest</span><span class="op">)</span> <span class="co"># for the `nlWaldtest()` function</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">dynlm</span><span class="op">)</span> <span class="co">#for the `dynlm()` function</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">orcutt</span><span class="op">)</span> <span class="co"># for the `cochrane.orcutt()` function</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">nlWaldTest</span><span class="op">)</span> <span class="co"># for the `nlWaldtest()` function</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://zoo.R-Forge.R-project.org/">zoo</a></span><span class="op">)</span> <span class="co"># for time series functions (not much used here)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/abielr/pdfetch">pdfetch</a></span><span class="op">)</span> <span class="co"># for retrieving data (just mentioned here)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lmtest</span><span class="op">)</span> <span class="co">#for `coeftest()` and `bptest()`.</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span> <span class="co">#for `glance(`) and `tidy()`</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">PoEdata</span><span class="op">)</span> <span class="co">#for PoE4 datasets</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span> <span class="co">#for `hccm()` robust standard errors</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: carData</code></pre>
-</div>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sandwich.R-Forge.R-project.org/">sandwich</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span> <span class="co">#for `hccm()` robust standard errors</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sandwich.R-Forge.R-project.org/">sandwich</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://yihui.org/knitr/">knitr</a></span><span class="op">)</span> <span class="co">#for kable()</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://pkg.robjhyndman.com/forecast/">forecast</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Registered S3 method overwritten by 'quantmod':
-  method            from
-  as.zoo.data.frame zoo </code></pre>
-</div>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'dplyr'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:car':
-
-    recode</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    filter, lag</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union</code></pre>
-</div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://pkg.robjhyndman.com/forecast/">forecast</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <p>Time Series Data adalah data beberapa variabel pada suatu unit pengamatan (seperti individu, negara, atau perusahaan) ketika pengamatan mencakup beberapa periode. Korelasi antara pengamatan selanjutnya, pentingnya tatanan dalam data dan dinamika (nilai data masa lalu mempengaruhi nilai masa kini dan masa depan) merupakan fitur time series data yang tidak terjadi dalam data cross-sectional.</p>
 <p>Model Time Series mengasumsikan, selain asumsi regresi linier biasa, bahwa <strong>series-series data tersebut stasioner</strong>, yaitu distribusi error, serta korelasi antar error dalam beberapa periode adalah konstan sepanjang waktu. Distribusi yang konstan mensyaratkan, khususnya, bahwa variabel tersebut tidak menampilkan tren dalam mean atau variansnya; korelasi konstan menyiratkan tidak adanya pengelompokan pengamatan dalam periode tertentu.</p>
@@ -298,7 +257,7 @@ Attaching package: 'dplyr'</code></pre>
 </ul>
 <p>Deret waktu dikatakan nonstasioner jika distribusinya, khususnya mean, varians, atau kovarians berdasarkan waktu berubah seiring waktu. Deret waktu nonstasioner tidak dapat digunakan dalam model regresi karena dapat menimbulkan <strong>regresi palsu</strong> , yaitu hubungan yang salah karena, misalnya, tren umum pada variabel yang tidak terkait. Dua atau lebih rangkaian nonstasioner masih dapat menjadi bagian dari model regresi jika keduanya terkointegrasi, yaitu keduanya berada dalam hubungan yang stasioner.</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"usa"</span>, package<span class="op">=</span><span class="st">"PoEdata"</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"usa"</span>, package<span class="op">=</span><span class="st">"PoEdata"</span><span class="op">)</span></span>
 <span><span class="va">usa.ts</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/ts.html">ts</a></span><span class="op">(</span><span class="va">usa</span>, start<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1984</span>,<span class="fl">1</span><span class="op">)</span>, end<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2009</span>,<span class="fl">4</span><span class="op">)</span>,</span>
 <span>               frequency<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span>
 <span><span class="va">Dgdp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">usa.ts</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
@@ -313,43 +272,43 @@ Attaching package: 'dplyr'</code></pre>
 <span>                      dframe<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span></span>
 <span>                      </span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">gdp</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">Dgdp</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">Dgdp</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">inf</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">inf</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">Dinf</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">Dinf</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-2-4.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-2-5.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">Df</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">Df</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-2-6.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-2-7.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">Db</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">Db</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-2-8.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Contoh Dataset:</p>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">)</span>, </span>
+<details><summary>Code</summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">)</span>, </span>
 <span>caption<span class="op">=</span><span class="st">"Time series data frame constructed with 'ts.union'"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <table class="table table-sm table-striped small">
 <caption>Time series data frame constructed with ‘ts.union’</caption>
 <thead><tr class="header">
@@ -435,20 +394,20 @@ Attaching package: 'dplyr'</code></pre>
 <p>Uji Dickey-Fuller untuk stasioneritas didasarkan pada proses AR(1) sebagaimana didefinisikan dalam Persamaan di atas.</p>
 <p><span class="math display">\[H_0: \rho=1, H_1:\rho&lt;1 \text{   (Variabel Stasioner})\]</span></p>
 <div class="cell">
-<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pkg.robjhyndman.com/forecast/reference/Acf.html">Acf</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://pkg.robjhyndman.com/forecast/reference/Acf.html">Acf</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section><section id="adf-test-usa-funds" class="level3" data-number="3.2.2"><h3 data-number="3.2.2" class="anchored" data-anchor-id="adf-test-usa-funds">
 <span class="header-section-number">3.2.2</span> ADF Test USA Funds</h3>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span>, k <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span>, k <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Augmented Dickey-Fuller Test
 
@@ -460,18 +419,18 @@ alternative hypothesis: stationary</code></pre>
 </section><section id="adf-test-usa-bonds" class="level3" data-number="3.2.3"><h3 data-number="3.2.3" class="anchored" data-anchor-id="adf-test-usa-bonds">
 <span class="header-section-number">3.2.3</span> ADF Test USA Bonds</h3>
 <div class="cell">
-<div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span>, k<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span>, k<span class="op">=</span><span class="fl">10</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Augmented Dickey-Fuller Test
 
@@ -488,20 +447,17 @@ alternative hypothesis: stationary</code></pre>
 <li>I(1) jika deret tersebut tidak stasioner pada tingkat-tingkatnya, tetapi stasioner pada perbedaan pertamanya.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-8-2.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">df</span>, k<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in tseries::adf.test(df, k = 2): p-value smaller than printed p-value</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">df</span>, k<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Augmented Dickey-Fuller Test
 
@@ -511,20 +467,17 @@ alternative hypothesis: stationary</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">db</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">db</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">db</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">db</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">db</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">db</span>, k<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in tseries::adf.test(db, k = 2): p-value smaller than printed p-value</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode" id="cb25"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">db</span>, k<span class="op">=</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Augmented Dickey-Fuller Test
 
@@ -538,10 +491,10 @@ alternative hypothesis: stationary</code></pre>
 <p>Dua seri terkointegrasi ketika trennya tidak berbeda jauh dan dalam beberapa hal serupa. Uji kointegrasi pada kenyataannya adalah uji stasioneritas Dickey-Fuler terhadap residu, dan hipotesis nolnya adalah nonkointegrasi. Dengan kata lain, kita ingin menolak hipotesis nol dalam uji kointegrasi, seperti yang kita inginkan dalam uji stasioneritas.</p>
 <p>Mari kita terapkan metode ini untuk menentukan keadaan kointegrasi antara rangkaian dan dalam kumpulan data</p>
 <div class="cell">
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fb.dyn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynlm/man/dynlm.html">dynlm</a></span><span class="op">(</span><span class="va">b</span><span class="op">~</span><span class="va">f</span>, data <span class="op">=</span> <span class="va">usa</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fb.dyn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynlm/man/dynlm.html">dynlm</a></span><span class="op">(</span><span class="va">b</span><span class="op">~</span><span class="va">f</span>, data <span class="op">=</span> <span class="va">usa</span><span class="op">)</span></span>
 <span><span class="va">ehat.fb</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/residuals.html">resid</a></span><span class="op">(</span><span class="va">fb.dyn</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">fb.dyn</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 Time series regression with "numeric" data:
 Start = 1, End = 104
@@ -566,17 +519,17 @@ F-statistic: 865.6 on 1 and 102 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#db &lt;- diff(usa.ts.df$b)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb29"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#db &lt;- diff(usa.ts.df$b)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">ehat.fb</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">ehat.fb</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details><summary>Code</summary><div class="sourceCode" id="cb30"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/acf.html">acf</a></span><span class="op">(</span><span class="va">ehat.fb</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <p><img src="ts_files/figure-html/unnamed-chunk-11-2.png" class="img-fluid" width="672"></p>
 </div>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">ehat.fb</span>, k<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">ehat.fb</span>, k<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Augmented Dickey-Fuller Test
 
@@ -586,11 +539,11 @@ alternative hypothesis: stationary</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">b</span><span class="op">=</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">b</span><span class="op">=</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span></span>
 <span><span class="va">f</span><span class="op">=</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span></span>
 <span><span class="va">bfx</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">b</span>,<span class="va">f</span><span class="op">)</span>, demean<span class="op">=</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/po.test.html">po.test</a></span><span class="op">(</span><span class="va">bfx</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Phillips-Ouliaris Cointegration Test
 
@@ -627,11 +580,11 @@ p-value = 0.04986</code></pre>
 </ul>
 <p>** Step 1 **</p>
 <div class="cell">
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">b</span><span class="op">=</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb35"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">b</span><span class="op">=</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">b</span></span>
 <span><span class="va">f</span><span class="op">=</span><span class="va">usa.ts.df</span><span class="op">$</span><span class="va">f</span></span>
 <span><span class="va">fb.dyn</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/dynlm/man/dynlm.html">dynlm</a></span><span class="op">(</span><span class="va">b</span><span class="op">~</span><span class="va">f</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">fb.dyn</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 Time series regression with "ts" data:
 Start = 1984(1), End = 2009(4)
@@ -656,9 +609,9 @@ F-statistic: 865.6 on 1 and 102 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ect</span><span class="op">=</span><span class="va">fb.dyn</span><span class="op">$</span><span class="va">residuals</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb37"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ect</span><span class="op">=</span><span class="va">fb.dyn</span><span class="op">$</span><span class="va">residuals</span></span>
 <span><span class="fu">tseries</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/tseries/man/adf.test.html">adf.test</a></span><span class="op">(</span><span class="va">ect</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Augmented Dickey-Fuller Test
 
@@ -670,7 +623,7 @@ alternative hypothesis: stationary</code></pre>
 <p>Signifikansi Menunjukkan adanya kointegrasi</p>
 <p>** Step 2 **</p>
 <div class="cell">
-<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Set ECT dan Variabel penting lainnya menjadi time Series</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb39"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Set ECT dan Variabel penting lainnya menjadi time Series</span></span>
 <span><span class="va">ect</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/ts.html">ts</a></span><span class="op">(</span><span class="va">ect</span>,start<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1984</span>,<span class="fl">1</span><span class="op">)</span>, end<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2009</span>,<span class="fl">4</span><span class="op">)</span>,</span>
 <span>               frequency<span class="op">=</span><span class="fl">4</span><span class="op">)</span></span>
 <span><span class="va">ect1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/ts.html">ts</a></span><span class="op">(</span><span class="va">ect</span>,start<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1984</span>,<span class="fl">2</span><span class="op">)</span>, end<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2009</span>,<span class="fl">4</span><span class="op">)</span>,</span>
@@ -691,7 +644,7 @@ alternative hypothesis: stationary</code></pre>
 <span></span>
 <span><span class="va">tsdata</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/ts.union.html">ts.union</a></span><span class="op">(</span><span class="va">b</span>,<span class="va">f</span>,<span class="va">L1.b</span>,<span class="va">L1.f</span>,<span class="va">ect</span>,<span class="va">ect1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tsdata</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>            b     f  L1.b  L1.f      ect     ect1
 1984 Q1 11.19  9.69    NA    NA 1.189524       NA
 1984 Q2 12.64 10.56 11.19  9.69 1.843986 1.189524
@@ -702,9 +655,9 @@ alternative hypothesis: stationary</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">regECM1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span><span class="op">+</span><span class="va">ect1</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb41"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">regECM1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span><span class="op">+</span><span class="va">ect1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">regECM1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = diff(b) ~ diff(f) + ect1)
@@ -737,9 +690,9 @@ F-statistic: 37.11 on 2 and 100 DF,  p-value: 8.811e-13</code></pre>
 <p><span class="math display">\[\Delta y_t=\alpha_0 - \alpha_1 (y_{t-1} + \frac{\alpha_2}{\alpha_1} x_{t-1})+\alpha_3 \Delta x_t+\varepsilon_t\]</span></p>
 <p>Long-Run Coefficient Model <span class="math display">\[\hat \beta_1=-\frac{\alpha_2}{\alpha_1} \]</span></p>
 <div class="cell">
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">regECM2</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span><span class="op">~</span><span class="va">L1.b</span><span class="op">+</span><span class="va">L1.f</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb43"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">regECM2</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span><span class="op">~</span><span class="va">L1.b</span><span class="op">+</span><span class="va">L1.f</span><span class="op">+</span><span class="fu"><a href="https://rdrr.io/r/base/diff.html">diff</a></span><span class="op">(</span><span class="va">f</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">regECM2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = diff(b) ~ L1.b + L1.f + diff(f))
@@ -763,18 +716,18 @@ F-statistic: 25.71 on 3 and 99 DF,  p-value: 2.214e-12</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Homoskedastisitas Check</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb45"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Homoskedastisitas Check</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/car/man/ncvTest.html">ncvTest</a></span><span class="op">(</span><span class="va">regECM2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>Non-constant Variance Score Test 
 Variance formula: ~ fitted.values 
 Chisquare = 0.000515675, Df = 1, p = 0.98188</code></pre>
 </div>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Homoskedastisitas Check</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb47"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Homoskedastisitas Check</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lmtest</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/pkg/lmtest/man/bgtest.html">bgtest</a></span><span class="op">(</span><span class="va">regECM2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Breusch-Godfrey test for serial correlation of order up to 1
 
@@ -785,26 +738,10 @@ LM test = 2.2827, df = 1, p-value = 0.1308</code></pre>
 </section><section id="ardl" class="level3" data-number="3.5.3"><h3 data-number="3.5.3" class="anchored" data-anchor-id="ardl">
 <span class="header-section-number">3.5.3</span> ARDL</h3>
 <div class="cell">
-<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Natsiopoulos/ARDL">ARDL</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>To cite the ARDL package in publications:
-
-Use this reference to refer to the validity of the ARDL package.
-
-  Natsiopoulos, Kleanthis, and Tzeremes, Nickolaos G. (2022). ARDL
-  bounds test for cointegration: Replicating the Pesaran et al. (2001)
-  results for the UK earnings equation using R. Journal of Applied
-  Econometrics, 37(5), 1079-1090. https://doi.org/10.1002/jae.2919
-
-Use this reference to cite this specific version of the ARDL package.
-
-  Kleanthis Natsiopoulos and Nickolaos Tzeremes (2023). ARDL: ARDL, ECM
-  and Bounds-Test for Cointegration. R package version 0.2.4.
-  https://CRAN.R-project.org/package=ARDL</code></pre>
-</div>
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ardl1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/ARDL/man/ardl.html">ardl</a></span><span class="op">(</span><span class="va">b</span><span class="op">~</span><span class="va">f</span>, data<span class="op">=</span><span class="va">usa.ts.df</span>, order<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb49"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Natsiopoulos/ARDL">ARDL</a></span><span class="op">)</span></span>
+<span><span class="va">ardl1</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/ARDL/man/ardl.html">ardl</a></span><span class="op">(</span><span class="va">b</span><span class="op">~</span><span class="va">f</span>, data<span class="op">=</span><span class="va">usa.ts.df</span>, order<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">ardl1</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 Time series regression with "ts" data:
 Start = 2, End = 104
@@ -830,8 +767,8 @@ Residual standard error: 0.4238 on 99 degrees of freedom
 Multiple R-squared:  0.9706,    Adjusted R-squared:  0.9697 
 F-statistic:  1089 on 3 and 99 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
-<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ARDL/man/bounds_f_test.html">bounds_f_test</a></span><span class="op">(</span><span class="va">ardl1</span>, case<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode" id="cb51"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ARDL/man/bounds_f_test.html">bounds_f_test</a></span><span class="op">(</span><span class="va">ardl1</span>, case<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Bounds F-test (Wald) for no cointegration
 
@@ -842,8 +779,8 @@ null values:
    k    T 
    1 1000 </code></pre>
 </div>
-<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ARDL/man/bounds_t_test.html">bounds_t_test</a></span><span class="op">(</span><span class="va">ardl1</span>, case<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details><summary>Code</summary><div class="sourceCode" id="cb53"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/ARDL/man/bounds_t_test.html">bounds_t_test</a></span><span class="op">(</span><span class="va">ardl1</span>, case<span class="op">=</span><span class="fl">3</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
     Bounds t-test for no cointegration
 
@@ -854,9 +791,9 @@ null values:
    k    T 
    1 1000 </code></pre>
 </div>
-<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ecm</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/ARDL/man/uecm.html">uecm</a></span><span class="op">(</span><span class="va">ardl1</span><span class="op">)</span></span>
+<details><summary>Code</summary><div class="sourceCode" id="cb55"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">ecm</span><span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/ARDL/man/uecm.html">uecm</a></span><span class="op">(</span><span class="va">ardl1</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">ecm</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</details><div class="cell-output cell-output-stdout">
 <pre><code>
 Time series regression with "ts" data:
 Start = 2, End = 104
@@ -1117,6 +1054,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script><script src="https://giscus.app/client.js" data-repo="ferdi-fadly/ferdi-fadly.github.io" data-repo-id="R_kgDOLeRb5w" data-category="General" data-category-id="DIC_kwDOLeRb584Cd-_y" data-mapping="title" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="light" data-lang="en" crossorigin="anonymous" async="">
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./regression.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Regresi Linear (Ordinary Least Squares)</span></span>
